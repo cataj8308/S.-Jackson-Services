@@ -5,14 +5,24 @@ business card (navy / sky palette, Archivo + IBM Plex Sans, gear-check logo).
 
 No build step. No frameworks. Open `index.html` in a browser and it works.
 
+It is a single page: Home, Services, Who We Help, About and Contact are
+sections on one page, and the menu scrolls to each. That is the usual layout
+for a small service business because visitors never get lost. If you later
+want separate pages (for example a detailed Services page or a gallery of
+work), each one is just another `.html` file that reuses `styles.css`.
+
 ## Fill in your details
 
 Everything that shows up more than once (names, phone numbers, email, hours,
 service area) lives in **one file**: [`site-config.js`](site-config.js).
 Edit the values there and every button, link and card on the site updates.
 
-Anything still in `[brackets]` is a placeholder. Until a phone number or email
-is filled in, the Call buttons stay harmless (they won't dial a fake number).
+Anything still in `[brackets]` is a placeholder. Until the email is filled in,
+the contact form asks visitors to call instead.
+
+**Headshots:** drop each photo into `assets/` and set `photo` for that person
+in `site-config.js` (for example `"assets/steve.jpg"`). Square photos around
+400×400 pixels look best. Leave it empty and the site shows initials.
 
 ## Files
 

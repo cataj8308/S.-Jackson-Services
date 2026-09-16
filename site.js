@@ -30,6 +30,17 @@
     S.people.forEach(function (p) {
       var d = document.createElement('div');
       d.className = 'person';
+      var avatar = document.createElement('div');
+      avatar.className = 'avatar';
+      if (p.photo) {
+        var img = document.createElement('img');
+        img.src = p.photo; img.alt = p.name || '';
+        avatar.appendChild(img);
+      } else {
+        avatar.textContent = String(p.name || '').split(/\s+/).map(function (w) { return w[0] || ''; }).join('').slice(0, 2).toUpperCase();
+        avatar.setAttribute('aria-hidden', 'true');
+      }
+      var info = document.createElement('div');
       var name = document.createElement('div'); name.className = 'name'; name.textContent = p.name || '';
       var role = document.createElement('div'); role.className = 'role'; role.textContent = p.role || '';
       var phone = document.createElement('div'); phone.className = 'phone'; phone.innerHTML = phoneIcon;
@@ -37,7 +48,8 @@
       a.textContent = p.phone || '';
       a.setAttribute('href', isPlaceholder(p.phone) ? '#contact' : telHref(p.phone));
       phone.appendChild(a);
-      d.appendChild(name); d.appendChild(role); d.appendChild(phone);
+      info.appendChild(name); info.appendChild(role); info.appendChild(phone);
+      d.appendChild(avatar); d.appendChild(info);
       people.appendChild(d);
     });
   }

@@ -9,10 +9,10 @@ window.SITE = {
   tagline: "Services · Automation",
 
   // Where you work. Shown in the hero and the footer.
-  serviceArea: "[Your City / County and surrounding areas]",
+  serviceArea: "customers across the United States",
 
   // Main business phone — used by every "Call" button on the site.
-  mainPhone: "[000-000-0000]",
+  mainPhone: "937-608-7698",
 
   // Business email — used by the Contact section and the form.
   email: "[email@domain.com]",
@@ -23,17 +23,21 @@ window.SITE = {
   // Business hours — plain text, shown in the Contact section.
   hours: "Monday – Friday, 8:00 AM – 6:00 PM",
 
-  // The two of you.
+  // The two of you. To add a headshot, drop the picture in the
+  // assets/ folder and set photo to its path, e.g. "assets/steve.jpg".
+  // Leave photo empty ("") and the site shows initials instead.
   people: [
     {
-      name: "[Dad's Name]",
+      name: "Steve Jackson",
       role: "Welding · Inspection · Auditing",
-      phone: "[000-000-0000]"
+      phone: "937-608-7698",
+      photo: ""
     },
     {
-      name: "[Your Name]",
+      name: "Catherine Jackson",
       role: "Technology Automation",
-      phone: "[000-000-0000]"
+      phone: "937-608-3624",
+      photo: ""
     }
   ]
 };
