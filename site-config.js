@@ -15,13 +15,13 @@ window.SITE = {
   mainPhone: "937-608-7698",
 
   // Business email — used by the Contact section and the form.
-  email: "[email@domain.com]",
+  email: "sjacksonservices1@gmail.com",
 
   // Web address shown in the footer (no https://).
   website: "www.sjacksonservices.com",
 
   // Business hours — plain text, shown in the Contact section.
-  hours: "Monday – Friday, 8:00 AM – 6:00 PM",
+  hours: "Open 7 days a week",
 
   // The two of you. To add a headshot, drop the picture in the
   // assets/ folder and set photo to its path, e.g. "assets/steve.jpg".
