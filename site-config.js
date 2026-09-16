@@ -35,7 +35,7 @@ window.SITE = {
     },
     {
       name: "Catherine Jackson",
-      role: "Technology Automation",
+      role: "AI Receptionist · UX/UI · Websites",
       phone: "937-608-3624",
       photo: ""
     }

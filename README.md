@@ -5,8 +5,10 @@ business card (navy / sky palette, Archivo + IBM Plex Sans, gear-check logo).
 
 No build step. No frameworks. Open `index.html` in a browser and it works.
 
-It is a single page: Home, Services, Who We Help, About and Contact are
-sections on one page, and the menu scrolls to each. That is the usual layout
+It is a single page split into two clearly separated halves: **Trade
+Services** (Steve: welding, inspection, auditing for contractors) and **AI &
+Design** (Catherine: AI receptionist, UX/UI design, websites for local
+businesses), followed by About and Contact. The menu scrolls to each. That is the usual layout
 for a small service business because visitors never get lost. If you later
 want separate pages (for example a detailed Services page or a gallery of
 work), each one is just another `.html` file that reuses `styles.css`.
@@ -28,7 +30,7 @@ in `site-config.js` (for example `"assets/steve.jpg"`). Square photos around
 
 | File | What it is |
 |---|---|
-| `index.html` | The page. Sections: hero, services, who we help, about, contact, footer. |
+| `index.html` | The page. Sections: hero, two-path chooser, trade services, AI & design, about, contact, footer. |
 | `styles.css` | All styling. Colors and fonts match the card exactly. |
 | `site-config.js` | Your names, phones, email, hours, service area. Edit this one. |
 | `site.js` | Fills in config values, runs the mobile menu and the contact form. |

@@ -22,6 +22,31 @@
     if (!isPlaceholder(v)) el.setAttribute('href', 'mailto:' + v);
   });
 
+  // Per-person phones and avatars used in the Trade / AI sections, contact list and footer
+  function avatarFill(el, p) {
+    el.innerHTML = '';
+    if (p.photo) {
+      var img = document.createElement('img'); img.src = p.photo; img.alt = p.name || '';
+      el.appendChild(img);
+    } else {
+      el.textContent = String(p.name || '').split(/\s+/).map(function (w) { return w[0] || ''; }).join('').slice(0, 2).toUpperCase();
+    }
+  }
+  if (Array.isArray(S.people)) {
+    document.querySelectorAll('[data-person-phone]').forEach(function (el) {
+      var p = S.people[+el.getAttribute('data-person-phone')];
+      if (p && p.phone) el.textContent = p.phone;
+    });
+    document.querySelectorAll('[data-person-tel]').forEach(function (el) {
+      var p = S.people[+el.getAttribute('data-person-tel')];
+      if (p && !isPlaceholder(p.phone)) el.setAttribute('href', telHref(p.phone));
+    });
+    document.querySelectorAll('[data-avatar]').forEach(function (el) {
+      var p = S.people[+el.getAttribute('data-avatar')];
+      if (p) avatarFill(el, p);
+    });
+  }
+
   // People cards (About section)
   var people = document.getElementById('people');
   if (people && Array.isArray(S.people) && S.people.length) {
@@ -32,14 +57,8 @@
       d.className = 'person';
       var avatar = document.createElement('div');
       avatar.className = 'avatar';
-      if (p.photo) {
-        var img = document.createElement('img');
-        img.src = p.photo; img.alt = p.name || '';
-        avatar.appendChild(img);
-      } else {
-        avatar.textContent = String(p.name || '').split(/\s+/).map(function (w) { return w[0] || ''; }).join('').slice(0, 2).toUpperCase();
-        avatar.setAttribute('aria-hidden', 'true');
-      }
+      avatar.setAttribute('aria-hidden', 'true');
+      avatarFill(avatar, p);
       var info = document.createElement('div');
       var name = document.createElement('div'); name.className = 'name'; name.textContent = p.name || '';
       var role = document.createElement('div'); role.className = 'role'; role.textContent = p.role || '';
