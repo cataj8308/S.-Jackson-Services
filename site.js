@@ -73,6 +73,78 @@
     });
   }
 
+  // Profiles (About section) — one block per person, alternating sides.
+  // Any text still in [brackets] is shown highlighted so it is easy to spot.
+  function richText(el, text) {
+    el.innerHTML = '';
+    String(text || '').split(/(\[[^\]]*\])/).forEach(function (part) {
+      if (!part) return;
+      if (/^\[.*\]$/.test(part)) {
+        var m = document.createElement('mark'); m.className = 'placeholder'; m.textContent = part; el.appendChild(m);
+      } else {
+        el.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+  var profiles = document.getElementById('profiles');
+  if (profiles && Array.isArray(S.people)) {
+    S.people.forEach(function (p, i) {
+      if (!p.story && !p.facts) return;
+      var art = el('article', 'profile' + (i % 2 ? ' flip' : ''));
+      art.id = String(p.name || '').split(/\s+/)[0].toLowerCase();
+
+      var side = el('div', 'profile-side');
+      var av = el('div', 'avatar big'); av.setAttribute('aria-hidden', 'true'); avatarFill(av, p);
+      side.appendChild(av);
+      var call = el('a', 'btn btn-primary');
+      call.setAttribute('href', isPlaceholder(p.phone) ? '#contact' : telHref(p.phone));
+      call.textContent = 'Call ' + String(p.name || '').split(/\s+/)[0];
+      side.appendChild(call);
+
+      var body = el('div', 'profile-body');
+      if (p.side) body.appendChild(el('div', 'profile-eyebrow', p.side));
+      body.appendChild(el('h3', null, p.name || ''));
+      body.appendChild(el('div', 'profile-role', p.role || ''));
+
+      var story = el('div', 'profile-story');
+      (p.story || []).forEach(function (t) { var para = el('p'); richText(para, t); story.appendChild(para); });
+      body.appendChild(story);
+
+      if (p.quote) { var q = el('blockquote', 'profile-quote'); richText(q, p.quote); body.appendChild(q); }
+
+      var cols = el('div', 'profile-cols');
+      if (p.facts && p.facts.length) {
+        var c1 = el('div');
+        c1.appendChild(el('div', 'profile-h', 'Quick facts'));
+        var ul = el('ul', 'facts');
+        p.facts.forEach(function (f) {
+          var li = el('li');
+          li.appendChild(el('span', 'fl', f.label || ''));
+          var v = el('span', 'fv'); richText(v, f.value); li.appendChild(v);
+          ul.appendChild(li);
+        });
+        c1.appendChild(ul); cols.appendChild(c1);
+      }
+      if (p.approach && p.approach.length) {
+        var c2 = el('div');
+        c2.appendChild(el('div', 'profile-h', 'How ' + String(p.name || '').split(/\s+/)[0] + ' works'));
+        var ul2 = el('ul', 'approach');
+        p.approach.forEach(function (t) { var li = el('li'); richText(li, t); ul2.appendChild(li); });
+        c2.appendChild(ul2); cols.appendChild(c2);
+      }
+      body.appendChild(cols);
+
+      art.appendChild(side); art.appendChild(body);
+      profiles.appendChild(art);
+    });
+  }
+
   // Footer year
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();

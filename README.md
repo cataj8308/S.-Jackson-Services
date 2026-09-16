@@ -22,6 +22,11 @@ Edit the values there and every button, link and card on the site updates.
 Anything still in `[brackets]` is a placeholder. Until the email is filled in,
 the contact form asks visitors to call instead.
 
+**Profiles:** the two personal profiles in the About section (story,
+quick facts, "how I work", quote) also come from `site-config.js`, under
+each person. Anything in `[brackets]` shows highlighted on the page until you
+replace it, so it is easy to spot what is still missing.
+
 **Headshots:** drop each photo into `assets/` and set `photo` for that person
 in `site-config.js` (for example `"assets/steve.jpg"`). Square photos around
 400×400 pixels look best. Leave it empty and the site shows initials.
