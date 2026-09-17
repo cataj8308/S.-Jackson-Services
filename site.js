@@ -102,10 +102,16 @@
       var side = el('div', 'profile-side');
       var av = el('div', 'avatar big'); av.setAttribute('aria-hidden', 'true'); avatarFill(av, p);
       side.appendChild(av);
-      var call = el('a', 'btn btn-primary');
-      call.setAttribute('href', isPlaceholder(p.phone) ? '#contact' : telHref(p.phone));
-      call.textContent = 'Call ' + String(p.name || '').split(/\s+/)[0];
-      side.appendChild(call);
+      if (p.resume) {
+        var cv = el('a', 'btn btn-outline');
+        cv.setAttribute('href', p.resume);
+        cv.setAttribute('target', '_blank');
+        cv.setAttribute('rel', 'noopener');
+        cv.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 16h6"/></svg>';
+        cv.appendChild(document.createTextNode('View Résumé'));
+        side.appendChild(cv);
+        side.appendChild(el('div', 'profile-note', 'Opens as a PDF'));
+      }
 
       var body = el('div', 'profile-body');
       if (p.side) body.appendChild(el('div', 'profile-eyebrow', p.side));

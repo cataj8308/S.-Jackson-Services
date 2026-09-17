@@ -32,6 +32,8 @@ window.SITE = {
   //   facts    - short label / value pairs shown as a quick-facts list
   //   approach - "How I work" bullet points
   //   quote    - one sentence in their own words
+  //   resume   - path to a PDF in the assets/ folder, e.g. "assets/steve-jackson-resume.pdf".
+  //              Leave it empty ("") to hide the button.
   people: [
     {
       name: "Steve Jackson",
@@ -39,6 +41,7 @@ window.SITE = {
       side: "Trade Services",
       phone: "937-608-7698",
       photo: "",
+      resume: "assets/steve-jackson-resume.pdf",
       story: [
         "Steve has been welding, inspecting and auditing for [number] years. He started [how he got into the trade, for example as an apprentice at a fabrication shop] and has since worked on [types of work, for example structural steel, piping and equipment repair] for contractors of every size.",
         "He works with contractors only. When a general contractor, mechanical crew or welding shop needs a qualified hand, an independent inspection, or an audit their client will trust, they call Steve.",
@@ -64,10 +67,11 @@ window.SITE = {
       side: "AI & Design",
       phone: "937-608-3624",
       photo: "",
+      resume: "assets/catherine-jackson-resume.pdf",
       story: [
-        "Catherine runs the technology side of the family business. Her focus is the AI receptionist: a phone assistant she sets up and tunes for each business so no customer call goes unanswered, whether the owner is with a client, on a job site, or closed for the night.",
+        "Catherine runs the technology side of S Jackson Services. Her focus is the AI receptionist: a phone assistant she sets up and tunes for each business so no customer call goes unanswered, whether the owner is with a client, on a job site, or closed for the night.",
         "She also designs the screens people actually use. [Your background, for example: a degree in design, years working in UX/UI, or projects you are proud of.] Her design work centers on making things simple enough for anyone, from a first-time smartphone user to a busy contractor's office, to use without a manual.",
-        "Growing up around her dad's trade work taught her how a small business really runs: the phone rings at the worst possible moment, and paperwork piles up. That is the problem she builds for."
+        "Years around job sites and small shops taught her how a business really runs: the phone rings at the worst possible moment, and paperwork piles up. That is the problem she builds for."
       ],
       facts: [
         { label: "Focus", value: "AI receptionists for local businesses" },

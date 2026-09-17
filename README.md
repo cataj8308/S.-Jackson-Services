@@ -3,6 +3,14 @@
 A simple, fast, one-page website for S Jackson Services, styled to match the
 business card (navy / sky palette, Archivo + IBM Plex Sans, gear-check logo).
 
+## Updating the site after it is live
+
+Yes, you can change anything at any time. Edit the file, commit, and push to
+the branch GitHub Pages serves from; the live site updates within a minute or
+two. Most changes only need `site-config.js`. Text in `index.html` and looks
+in `styles.css` are yours to edit too. You can also make edits directly on
+github.com with the pencil icon on any file.
+
 No build step. No frameworks. Open `index.html` in a browser and it works.
 
 It is a single page split into two clearly separated halves: **Trade
@@ -26,6 +34,10 @@ the contact form asks visitors to call instead.
 quick facts, "how I work", quote) also come from `site-config.js`, under
 each person. Anything in `[brackets]` shows highlighted on the page until you
 replace it, so it is easy to spot what is still missing.
+
+**Résumés:** each profile has a "View Résumé" button. Put the PDF in
+`assets/` and point `resume` for that person in `site-config.js` at it. Set it
+to `""` to hide the button.
 
 **Headshots:** drop each photo into `assets/` and set `photo` for that person
 in `site-config.js` (for example `"assets/steve.jpg"`). Square photos around
