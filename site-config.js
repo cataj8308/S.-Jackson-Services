@@ -26,9 +26,10 @@ window.SITE = {
   // A photo of the two of you together, shown on the About card.
   // Drop the image in assets/ and set src to its path. Until the file
   // exists, the card shows an empty frame that says what to add.
+  // Leave caption as "" for no text under the photo.
   teamPhoto: {
     src: "assets/steve-and-catherine.jpg",
-    caption: "Steve and Catherine Jackson"
+    caption: ""
   },
 
   // The two of you. To add a headshot, drop the picture in the

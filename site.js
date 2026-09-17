@@ -92,6 +92,7 @@
   if (teamFig && S.teamPhoto && S.teamPhoto.src) {
     var names = (S.people || []).map(function (p) { return String(p.name || '').split(/\s+/)[0]; }).filter(Boolean).join(' and ');
     mountPhoto(teamFig.querySelector('.team-photo-frame'), S.teamPhoto.src, S.teamPhoto.caption || names, names || 'the team');
+    teamFig.querySelector('.team-photo-frame').style.borderRadius = 'var(--radius)';
     if (S.teamPhoto.caption) { var tc = el('figcaption'); richText(tc, S.teamPhoto.caption); teamFig.appendChild(tc); }
   }
 
