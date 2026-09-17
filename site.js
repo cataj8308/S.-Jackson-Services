@@ -92,6 +92,35 @@
     });
   }
 
+  // Loads a photo into a frame; if the file is missing, shows a note saying what to add.
+  function mountPhoto(frame, src, alt, who) {
+    if (!frame || !src) return;
+    var img = document.createElement('img');
+    img.alt = alt || '';
+    img.addEventListener('load', function () {
+      frame.classList.remove('missing');
+      frame.innerHTML = '';
+      frame.appendChild(img);
+    });
+    img.addEventListener('error', function () {
+      frame.classList.add('missing');
+      frame.innerHTML = '';
+      var note = el('div', 'work-photo-missing');
+      note.appendChild(el('strong', null, 'Photo of ' + who + ' goes here'));
+      note.appendChild(el('span', null, 'Add the file as ' + src));
+      frame.appendChild(note);
+    });
+    img.src = src;
+  }
+
+  // Photo of the two of you on the About card
+  var teamFig = document.getElementById('teamPhoto');
+  if (teamFig && S.teamPhoto && S.teamPhoto.src) {
+    var names = (S.people || []).map(function (p) { return String(p.name || '').split(/\s+/)[0]; }).filter(Boolean).join(' and ');
+    mountPhoto(teamFig.querySelector('.team-photo-frame'), S.teamPhoto.src, S.teamPhoto.caption || names, names || 'the team');
+    if (S.teamPhoto.caption) { var tc = el('figcaption'); richText(tc, S.teamPhoto.caption); teamFig.appendChild(tc); }
+  }
+
   // In-action photos in the two service sections
   document.querySelectorAll('[data-work-photo]').forEach(function (fig) {
     var p = (S.people || [])[+fig.getAttribute('data-work-photo')];
@@ -105,22 +134,8 @@
       if (p.workPhoto && p.workPhoto.caption) { var em = el('em'); richText(em, p.workPhoto.caption); cap.appendChild(em); }
     }
     if (!(p.workPhoto && p.workPhoto.src) || !frame) return;
-    var img = document.createElement('img');
-    img.alt = p.workPhoto.caption ? p.workPhoto.caption.replace(/^\[|\]$/g, '') : (p.name + ' at work');
-    img.addEventListener('load', function () {
-      frame.classList.remove('missing');
-      frame.innerHTML = '';
-      frame.appendChild(img);
-    });
-    img.addEventListener('error', function () {
-      frame.classList.add('missing');
-      frame.innerHTML = '';
-      var note = el('div', 'work-photo-missing');
-      note.appendChild(el('strong', null, 'Photo of ' + String(p.name || '').split(/\s+/)[0] + ' at work goes here'));
-      note.appendChild(el('span', null, 'Add the file as ' + p.workPhoto.src));
-      frame.appendChild(note);
-    });
-    img.src = p.workPhoto.src;
+    var alt = p.workPhoto.caption ? p.workPhoto.caption.replace(/^\[|\]$/g, '') : (p.name + ' at work');
+    mountPhoto(frame, p.workPhoto.src, alt, String(p.name || '').split(/\s+/)[0] + ' at work');
   });
 
   // Profiles (About section) — one block per person, alternating sides.

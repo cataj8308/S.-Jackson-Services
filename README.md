@@ -40,6 +40,10 @@ in `assets/`. Catherine's is a placeholder until hers is added. Replace the
 PDF in `assets/` and keep the same filename, or change `resume` for that person
 in `site-config.js`. Set it to `""` to hide the button.
 
+**Photo of the two of you:** the About card has a photo frame on top. Save
+the picture as `assets/steve-and-catherine.jpg` (or change `teamPhoto.src` in
+`site-config.js`) and edit the caption there. Landscape, about 3:2, looks best.
+
 **Work photos:** each service section opens with a photo of that person doing
 the job (not a headshot), next to the section intro. Save the image as `assets/steve-at-work.jpg` or
 `assets/catherine-at-work.jpg` (or change `workPhoto.src` in `site-config.js`)

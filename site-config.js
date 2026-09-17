@@ -23,6 +23,14 @@ window.SITE = {
   // Business hours — plain text, shown in the Contact section.
   hours: "Open 7 days a week",
 
+  // A photo of the two of you together, shown on the About card.
+  // Drop the image in assets/ and set src to its path. Until the file
+  // exists, the card shows an empty frame that says what to add.
+  teamPhoto: {
+    src: "assets/steve-and-catherine.jpg",
+    caption: "Steve and Catherine Jackson"
+  },
+
   // The two of you. To add a headshot, drop the picture in the
   // assets/ folder and set photo to its path, e.g. "assets/steve.jpg".
   // Leave photo empty ("") and the site shows initials instead.
