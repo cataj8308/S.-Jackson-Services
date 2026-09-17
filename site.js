@@ -66,32 +66,6 @@
     });
   }
 
-  // People cards (About section)
-  var people = document.getElementById('people');
-  if (people && Array.isArray(S.people) && S.people.length) {
-    var phoneIcon = '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3A19.5 19.5 0 0 1 5.1 13 19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>';
-    people.innerHTML = '';
-    S.people.forEach(function (p) {
-      var d = document.createElement('div');
-      d.className = 'person';
-      var avatar = document.createElement('div');
-      avatar.className = 'avatar';
-      avatar.setAttribute('aria-hidden', 'true');
-      avatarFill(avatar, p);
-      var info = document.createElement('div');
-      var name = document.createElement('div'); name.className = 'name'; name.textContent = p.name || '';
-      var role = document.createElement('div'); role.className = 'role'; role.textContent = p.role || '';
-      var phone = document.createElement('div'); phone.className = 'phone'; phone.innerHTML = phoneIcon;
-      var a = document.createElement('a');
-      a.textContent = p.phone || '';
-      a.setAttribute('href', isPlaceholder(p.phone) ? '#contact' : telHref(p.phone));
-      phone.appendChild(a);
-      info.appendChild(name); info.appendChild(role); info.appendChild(phone);
-      d.appendChild(avatar); d.appendChild(info);
-      people.appendChild(d);
-    });
-  }
-
   // Loads a photo into a frame; if the file is missing, shows a note saying what to add.
   function mountPhoto(frame, src, alt, who) {
     if (!frame || !src) return;

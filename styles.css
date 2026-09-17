@@ -238,10 +238,9 @@ h3{
 .about-copy p + p{margin-top:18px;}
 .card-back{
   background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);
-  position:relative;overflow:hidden;padding:40px 38px 46px;
+  position:relative;overflow:hidden;
 }
-.card-back .watermark{position:absolute;right:0;bottom:0;width:260px;height:260px;pointer-events:none;}
-.team-photo{margin:-40px -38px 30px;position:relative;}
+.team-photo{margin:0;position:relative;}
 .team-photo-frame{
   width:100%;aspect-ratio:3 / 2;overflow:hidden;background:var(--sky-light);
   border-radius:var(--radius) var(--radius) 0 0;
@@ -251,20 +250,9 @@ h3{
   display:grid;place-items:center;background:var(--bg);border-bottom:2px dashed var(--sky);
 }
 .team-photo figcaption{
-  padding:10px 38px 0;font-size:14.5px;color:var(--muted);letter-spacing:.03em;
+  padding:14px 22px 16px;font-size:15px;color:var(--muted);letter-spacing:.03em;
 }
-.card-back .brand{margin-bottom:34px;}
-.people{display:flex;flex-direction:column;gap:34px;position:relative;}
-.person{display:flex;gap:18px;align-items:flex-start;}
-.person .name{
-  font-family:'Archivo',sans-serif;font-weight:600;font-size:20px;
-  letter-spacing:.07em;text-transform:uppercase;color:var(--navy);line-height:1.2;
-}
-.person .role{font-size:15px;color:var(--muted);margin-top:8px;letter-spacing:.05em;}
-.person .phone{margin-top:12px;display:flex;align-items:center;gap:10px;font-size:18px;}
-.person .phone a{font-weight:500;}
 .icon{width:18px;height:18px;flex:none;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
-.accent-bar{position:absolute;right:38px;bottom:0;width:140px;height:6px;background:var(--navy);}
 
 /* ---------- PROFILES (inside About) ---------- */
 .profiles{margin-top:72px;display:flex;flex-direction:column;gap:56px;}
@@ -437,9 +425,7 @@ textarea{min-height:150px;resize:vertical;}
   .path{border-right:none;border-bottom:1px solid var(--line);padding:26px 20px;}
   .path:last-child{border-bottom:none;}
   .side-cta .btn{width:100%;}
-  .card-back{padding:32px 26px 40px;}
-  .team-photo{margin:-32px -26px 24px;}
-  .team-photo figcaption{padding:10px 26px 0;}
+  .team-photo figcaption{padding:12px 18px 14px;}
   form{padding:24px;}
   .form-actions .btn{width:100%;}
 }
