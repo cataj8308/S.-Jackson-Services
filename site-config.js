@@ -43,21 +43,22 @@ window.SITE = {
       photo: "",
       resume: "assets/steve-jackson-resume.pdf",
       story: [
-        "Steve has been welding, inspecting and auditing for [number] years. He started [how he got into the trade, for example as an apprentice at a fabrication shop] and has since worked on [types of work, for example structural steel, piping and equipment repair] for contractors of every size.",
-        "He works with contractors only. When a general contractor, mechanical crew or welding shop needs a qualified hand, an independent inspection, or an audit their client will trust, they call Steve.",
-        "What he is known for: showing up when he says he will, telling you straight what he found, and leaving you with a written report you can hand to anyone."
+        "Steve has spent more than 20 years in the pipeline and oil and gas industry, first as a welder and later as a Certified Welding Inspector. He learned the trade in the U.S. Navy, where he trained in general maintenance welding and high-pressure pipe and plate welding, then built a career that runs from the welding truck to the inspector's clipboard.",
+        "He owned and ran S. Jackson Welding LLC for more than a decade, bidding and executing pipe fabrication and repair work at fuel terminals for Sunoco, Marathon and Buckeye, and rehab and testing work for Vectren Gas. As a welder foreman and later site superintendent with United Piping, he ran crews on pipeline projects for Enbridge, TransCanada and Tesoro.",
+        "Since 2021 he has worked as a CWI inspector on refinery, pipeline and terminal jobs for BP and MPLX, and most recently as a mechanical lead and owner's representative on large data-center builds for Google and Meta. Contractors call him when they need a qualified welder, an independent inspector, or a job book their client will sign off on."
       ],
       facts: [
-        { label: "Trade", value: "Welding, inspection and auditing" },
-        { label: "Experience", value: "[number] years" },
-        { label: "Works with", value: "Contractors only" },
-        { label: "Certifications", value: "[for example: AWS Certified Welder, CWI, OSHA 30]" },
-        { label: "Based in", value: "[City, State]" }
+        { label: "Trade", value: "Pipe and plate welding, CWI inspection, QA/QC auditing" },
+        { label: "Experience", value: "20+ years in pipeline, oil and gas, and industrial construction" },
+        { label: "Works with", value: "Contractors only: pipeline, refinery, terminal and data-center projects" },
+        { label: "Certifications", value: "AWS Certified Welding Inspector (CWI), NCCER Trainer, Veriforce Trainer, OSHA 10 and 30, NFPA 70E Electrical Safety, Lockout/Tagout, Fall Protection Competent Person, CPR and First Aid" },
+        { label: "Training", value: "U.S. Navy: General Maintenance Welder School, High Pressure Pipe and Plate Welding School, Hull Technician (A) School" },
+        { label: "Based in", value: "Dayton, Ohio area" }
       ],
       approach: [
-        "A quick call to understand the job before quoting it",
-        "On site when promised, with the right equipment",
-        "A straight pass or fail and a written report, every time"
+        "Starts every shift with a pre-job safety meeting, a safe work permit and a JSA",
+        "Inspects to code and to the customer's own procedures, and documents as he goes",
+        "Closes out with a complete job book and final package your client can accept"
       ],
       quote: "[A sentence in Steve's own words about why he does this work.]"
     },

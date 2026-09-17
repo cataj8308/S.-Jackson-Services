@@ -35,9 +35,10 @@ quick facts, "how I work", quote) also come from `site-config.js`, under
 each person. Anything in `[brackets]` shows highlighted on the page until you
 replace it, so it is easy to spot what is still missing.
 
-**Résumés:** each profile has a "View Résumé" button. Put the PDF in
-`assets/` and point `resume` for that person in `site-config.js` at it. Set it
-to `""` to hide the button.
+**Résumés:** each profile has a "View Résumé" button. Steve's real résumé is
+in `assets/`. Catherine's is a placeholder until hers is added. Replace the
+PDF in `assets/` and keep the same filename, or change `resume` for that person
+in `site-config.js`. Set it to `""` to hide the button.
 
 **Headshots:** drop each photo into `assets/` and set `photo` for that person
 in `site-config.js` (for example `"assets/steve.jpg"`). Square photos around
