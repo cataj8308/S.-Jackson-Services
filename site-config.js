@@ -117,7 +117,7 @@ window.SITE = {
         { label: "Based in", value: "Dayton, Ohio" }
       ],
       approach: [
-        "A short conversation about your business, in plain language",
+        "A conversation about your business first, so we align on your goals before anything is built",
         "A setup you can hear and try before it answers a real customer",
         "Support afterward from the same person who set it up"
       ],
