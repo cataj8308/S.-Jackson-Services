@@ -111,7 +111,7 @@ window.SITE = {
         "A setup you can hear and try before it answers a real customer",
         "Support afterward from the same person who set it up"
       ],
-      quote: "[A sentence in Catherine's own words about why she does this work.]"
+      quote: "I want every business to hone in on the quality of their craft without added pressures."
     }
   ]
 };
