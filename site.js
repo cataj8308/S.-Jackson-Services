@@ -146,6 +146,15 @@
       }
       body.appendChild(cols);
 
+      if (p.credentials && p.credentials.length) {
+        var cr = el('div', 'credentials');
+        cr.appendChild(el('div', 'profile-h', 'Certifications and training'));
+        var wrap = el('div', 'chips');
+        p.credentials.forEach(function (t) { var c = el('span', 'chip'); richText(c, t); wrap.appendChild(c); });
+        cr.appendChild(wrap);
+        body.appendChild(cr);
+      }
+
       art.appendChild(side); art.appendChild(body);
       profiles.appendChild(art);
     });

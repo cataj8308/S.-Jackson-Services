@@ -30,6 +30,7 @@ window.SITE = {
   // Each person also has a profile in the About section:
   //   story    - paragraphs about them (plain text, one per line)
   //   facts    - short label / value pairs shown as a quick-facts list
+  //   credentials - certifications and training, shown as a row of tags
   //   approach - "How I work" bullet points
   //   quote    - one sentence in their own words
   //   resume   - path to a PDF in the assets/ folder, e.g. "assets/steve-jackson-resume.pdf".
@@ -51,9 +52,21 @@ window.SITE = {
         { label: "Trade", value: "Pipe and plate welding, CWI inspection, QA/QC auditing" },
         { label: "Experience", value: "20+ years in pipeline, oil and gas, and industrial construction" },
         { label: "Works with", value: "Contractors only: pipeline, refinery, terminal and data-center projects" },
-        { label: "Certifications", value: "AWS Certified Welding Inspector (CWI), NCCER Trainer, Veriforce Trainer, OSHA 10 and 30, NFPA 70E Electrical Safety, Lockout/Tagout, Fall Protection Competent Person, CPR and First Aid" },
-        { label: "Training", value: "U.S. Navy: General Maintenance Welder School, High Pressure Pipe and Plate Welding School, Hull Technician (A) School" },
         { label: "Based in", value: "Dayton, Ohio area" }
+      ],
+      credentials: [
+        "AWS Certified Welding Inspector (CWI)",
+        "NCCER Trainer",
+        "Veriforce Trainer",
+        "OSHA 10",
+        "OSHA 30",
+        "NFPA 70E Electrical Safety",
+        "Lockout / Tagout",
+        "Fall Protection Competent Person",
+        "CPR and First Aid",
+        "U.S. Navy High Pressure Pipe and Plate Welding School",
+        "U.S. Navy General Maintenance Welder School",
+        "U.S. Navy Hull Technician (A) School"
       ],
       approach: [
         "Starts every shift with a pre-job safety meeting, a safe work permit and a JSA",
