@@ -179,29 +179,9 @@ h3{
 
 /* ---------- SIDE SECTIONS (Steve / Catherine) ---------- */
 .side-head{
-  display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;margin-bottom:44px;
+  display:grid;grid-template-columns:1fr 440px;gap:48px;align-items:start;margin-bottom:44px;
 }
 .side-head .section-head{margin-bottom:0;}
-.side-person{
-  display:flex;gap:16px;align-items:center;
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  padding:18px 22px;min-width:300px;
-}
-.side-auto .side-person{background:var(--bg);}
-.side-person-name{
-  font-family:'Archivo',sans-serif;font-weight:600;font-size:17px;
-  letter-spacing:.06em;text-transform:uppercase;color:var(--navy);line-height:1.2;
-}
-.side-person-role{font-size:14px;color:var(--muted);margin-top:4px;letter-spacing:.03em;}
-.side-person-phone{
-  display:inline-flex;align-items:center;gap:8px;margin-top:8px;
-  font-size:17px;font-weight:500;text-decoration:none;
-}
-.side-person-phone:hover{text-decoration:underline;}
-.side-person-phone .icon{width:16px;height:16px;}
-.side-person-more{
-  display:block;margin-top:8px;font-size:15px;font-weight:500;color:var(--navy);
-}
 .side-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px;}
 .side-auto{background:#fff;}
 .side-auto .service{border-top-color:var(--sky);}
@@ -214,7 +194,6 @@ h3{
   font-family:'Archivo',sans-serif;font-weight:600;font-size:22px;letter-spacing:.06em;color:var(--navy);
 }
 .avatar img{width:100%;height:100%;object-fit:cover;}
-.side-person .avatar{width:64px;height:64px;font-size:20px;}
 
 /* AI & design grid: featured card + two stacked */
 .auto-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:stretch;}
@@ -337,22 +316,27 @@ h3{
   background:var(--bg);font-size:14.5px;line-height:1.3;color:var(--navy-deep);
 }
 .profile.flip .chip{background:var(--sky-light);border-color:transparent;}
-.work-photo{grid-column:1 / -1;margin:8px 0 0;}
-.work-photo-frame{
-  width:100%;aspect-ratio:16 / 8;max-width:100%;border-radius:var(--radius);overflow:hidden;
-  background:var(--sky-light);
+.side-photo{margin:0;}
+.side-photo-frame{
+  width:100%;aspect-ratio:4 / 3;max-width:100%;border-radius:var(--radius);overflow:hidden;
+  background:var(--sky-light);box-shadow:var(--shadow);
 }
-.work-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
-.work-photo-frame.missing{
-  display:grid;place-items:center;border:2px dashed var(--sky);background:var(--bg);
-  aspect-ratio:16 / 6;
+.side-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.side-photo-frame.missing{
+  display:grid;place-items:center;border:2px dashed var(--sky);background:#fff;box-shadow:none;
 }
+.side-auto .side-photo-frame.missing{background:var(--bg);}
 .work-photo-missing{display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;padding:20px;}
 .work-photo-missing strong{
-  font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);
+  font-family:'Archivo',sans-serif;font-weight:600;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);
 }
-.work-photo-missing span{font-size:14.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
-.work-photo figcaption{margin-top:12px;font-size:15.5px;color:var(--muted);letter-spacing:.02em;}
+.work-photo-missing span{font-size:13.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
+.side-photo figcaption{display:flex;flex-direction:column;gap:2px;margin-top:14px;}
+.side-photo figcaption strong{
+  font-family:'Archivo',sans-serif;font-weight:600;font-size:16px;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);
+}
+.side-photo figcaption span{font-size:14.5px;color:var(--muted);letter-spacing:.03em;}
+.side-photo figcaption em{font-style:normal;font-size:15px;color:var(--text);margin-top:6px;}
 .placeholder{background:rgba(159,187,214,.28);border-radius:3px;padding:0 4px;}
 
 /* ---------- CONTACT ---------- */
@@ -414,7 +398,6 @@ textarea{min-height:150px;resize:vertical;}
   .profile.flip .profile-side{order:0;}
   .profile .avatar.big{width:150px;height:150px;font-size:42px;}
   .profile-cols{grid-template-columns:1fr;}
-  .side-person{min-width:0;}
   .auto-grid{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr;gap:32px;}
   .section{padding:64px 0;}

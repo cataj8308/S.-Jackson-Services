@@ -35,9 +35,10 @@ window.SITE = {
   //   quote    - one sentence in their own words
   //   resume   - path to a PDF in the assets/ folder, e.g. "assets/steve-jackson-resume.pdf".
   //              Leave it empty ("") to hide the button.
-  //   workPhoto - a photo of the person actually doing the work (not a headshot).
-  //              Drop the image in assets/ and set src to its path. caption is
-  //              shown under it. Until the file exists, an empty frame is shown.
+  //   workPhoto - a photo of the person actually doing the work (not a headshot),
+  //              shown at the top of their service section. Drop the image in
+  //              assets/ and set src to its path. caption is shown under it.
+  //              Until the file exists, an empty frame is shown.
   people: [
     {
       name: "Steve Jackson",

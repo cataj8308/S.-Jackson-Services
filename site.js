@@ -6,6 +6,25 @@
   function telHref(num) { return 'tel:' + String(num).replace(/[^\d+]/g, ''); }
   function isPlaceholder(v) { return !v || /^\[.*\]$/.test(String(v).trim()); }
 
+  // Small DOM helpers. Any text still in [brackets] is shown highlighted so it is easy to spot.
+  function richText(el, text) {
+    el.innerHTML = '';
+    String(text || '').split(/(\[[^\]]*\])/).forEach(function (part) {
+      if (!part) return;
+      if (/^\[.*\]$/.test(part)) {
+        var m = document.createElement('mark'); m.className = 'placeholder'; m.textContent = part; el.appendChild(m);
+      } else {
+        el.appendChild(document.createTextNode(part));
+      }
+    });
+  }
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
   // Text fills
   document.querySelectorAll('[data-fill]').forEach(function (el) {
     var key = el.getAttribute('data-fill');
@@ -73,25 +92,38 @@
     });
   }
 
-  // Profiles (About section) — one block per person, alternating sides.
-  // Any text still in [brackets] is shown highlighted so it is easy to spot.
-  function richText(el, text) {
-    el.innerHTML = '';
-    String(text || '').split(/(\[[^\]]*\])/).forEach(function (part) {
-      if (!part) return;
-      if (/^\[.*\]$/.test(part)) {
-        var m = document.createElement('mark'); m.className = 'placeholder'; m.textContent = part; el.appendChild(m);
-      } else {
-        el.appendChild(document.createTextNode(part));
-      }
+  // In-action photos in the two service sections
+  document.querySelectorAll('[data-work-photo]').forEach(function (fig) {
+    var p = (S.people || [])[+fig.getAttribute('data-work-photo')];
+    if (!p) return;
+    var frame = fig.querySelector('.side-photo-frame');
+    var cap = fig.querySelector('figcaption');
+    if (cap) {
+      cap.innerHTML = '';
+      cap.appendChild(el('strong', null, p.name || ''));
+      cap.appendChild(el('span', null, p.role || ''));
+      if (p.workPhoto && p.workPhoto.caption) { var em = el('em'); richText(em, p.workPhoto.caption); cap.appendChild(em); }
+    }
+    if (!(p.workPhoto && p.workPhoto.src) || !frame) return;
+    var img = document.createElement('img');
+    img.alt = p.workPhoto.caption ? p.workPhoto.caption.replace(/^\[|\]$/g, '') : (p.name + ' at work');
+    img.addEventListener('load', function () {
+      frame.classList.remove('missing');
+      frame.innerHTML = '';
+      frame.appendChild(img);
     });
-  }
-  function el(tag, cls, text) {
-    var e = document.createElement(tag);
-    if (cls) e.className = cls;
-    if (text !== undefined) e.textContent = text;
-    return e;
-  }
+    img.addEventListener('error', function () {
+      frame.classList.add('missing');
+      frame.innerHTML = '';
+      var note = el('div', 'work-photo-missing');
+      note.appendChild(el('strong', null, 'Photo of ' + String(p.name || '').split(/\s+/)[0] + ' at work goes here'));
+      note.appendChild(el('span', null, 'Add the file as ' + p.workPhoto.src));
+      frame.appendChild(note);
+    });
+    img.src = p.workPhoto.src;
+  });
+
+  // Profiles (About section) — one block per person, alternating sides.
   var profiles = document.getElementById('profiles');
   if (profiles && Array.isArray(S.people)) {
     S.people.forEach(function (p, i) {
@@ -157,25 +189,6 @@
 
       art.appendChild(side); art.appendChild(body);
 
-      if (p.workPhoto && p.workPhoto.src) {
-        var fig = el('figure', 'work-photo');
-        var frame = el('div', 'work-photo-frame');
-        var img = document.createElement('img');
-        img.alt = p.workPhoto.caption ? p.workPhoto.caption.replace(/^\[|\]$/g, '') : (p.name + ' at work');
-        img.addEventListener('error', function () {
-          frame.classList.add('missing');
-          frame.innerHTML = '';
-          var note = el('div', 'work-photo-missing');
-          note.appendChild(el('strong', null, 'Photo of ' + String(p.name || '').split(/\s+/)[0] + ' at work goes here'));
-          note.appendChild(el('span', null, 'Add the file as ' + p.workPhoto.src));
-          frame.appendChild(note);
-        });
-        img.src = p.workPhoto.src;
-        frame.appendChild(img);
-        fig.appendChild(frame);
-        if (p.workPhoto.caption) { var cap = el('figcaption'); richText(cap, p.workPhoto.caption); fig.appendChild(cap); }
-        art.appendChild(fig);
-      }
       profiles.appendChild(art);
     });
   }
