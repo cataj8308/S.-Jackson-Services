@@ -35,6 +35,9 @@ window.SITE = {
   //   quote    - one sentence in their own words
   //   resume   - path to a PDF in the assets/ folder, e.g. "assets/steve-jackson-resume.pdf".
   //              Leave it empty ("") to hide the button.
+  //   workPhoto - a photo of the person actually doing the work (not a headshot).
+  //              Drop the image in assets/ and set src to its path. caption is
+  //              shown under it. Until the file exists, an empty frame is shown.
   people: [
     {
       name: "Steve Jackson",
@@ -43,14 +46,19 @@ window.SITE = {
       phone: "937-608-7698",
       photo: "",
       resume: "assets/steve-jackson-resume.pdf",
+      workPhoto: {
+        src: "assets/steve-at-work.jpg",
+        caption: "Steve welding a pipeline joint in the field."
+      },
       story: [
         "Steve has spent more than 20 years in the pipeline and oil and gas industry, first as a welder and later as a Certified Welding Inspector. He learned the trade in the U.S. Navy, where he trained in general maintenance welding and high-pressure pipe and plate welding, then built a career that runs from the welding truck to the inspector's clipboard.",
         "He owned and ran S. Jackson Welding LLC for more than a decade, bidding and executing pipe fabrication and repair work at fuel terminals for Sunoco, Marathon and Buckeye, and rehab and testing work for Vectren Gas. As a welder foreman and later site superintendent with United Piping, he ran crews on pipeline projects for Enbridge, TransCanada and Tesoro.",
-        "Since 2021 he has worked as a CWI inspector on refinery, pipeline and terminal jobs for BP and MPLX, and most recently as a mechanical lead and owner's representative on large data-center builds for Google and Meta. Contractors call him when they need a qualified welder, an independent inspector, or a job book their client will sign off on."
+        "A Certified Welding Inspector since 2011, he has inspected refinery, pipeline and terminal jobs for BP and MPLX, and most recently served as mechanical lead and owner's representative on large data-center builds for Google and Meta. Contractors call him when they need a qualified welder, an independent inspector, or a job book their client will sign off on."
       ],
       facts: [
         { label: "Trade", value: "Pipe and plate welding, CWI inspection, QA/QC auditing" },
         { label: "Experience", value: "20+ years in pipeline, oil and gas, and industrial construction" },
+        { label: "CWI since", value: "2011" },
         { label: "Works with", value: "Contractors only: pipeline, refinery, terminal and data-center projects" },
         { label: "Based in", value: "Dayton, Ohio area" }
       ],
@@ -82,6 +90,10 @@ window.SITE = {
       phone: "937-608-3624",
       photo: "",
       resume: "assets/catherine-jackson-resume.pdf",
+      workPhoto: {
+        src: "assets/catherine-at-work.jpg",
+        caption: "[Catherine at work: add a photo and caption.]"
+      },
       story: [
         "Catherine runs the technology side of S Jackson Services. Her focus is the AI receptionist: a phone assistant she sets up and tunes for each business so no customer call goes unanswered, whether the owner is with a client, on a job site, or closed for the night.",
         "She also designs the screens people actually use. [Your background, for example: a degree in design, years working in UX/UI, or projects you are proud of.] Her design work centers on making things simple enough for anyone, from a first-time smartphone user to a busy contractor's office, to use without a manual.",

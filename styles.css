@@ -337,6 +337,22 @@ h3{
   background:var(--bg);font-size:14.5px;line-height:1.3;color:var(--navy-deep);
 }
 .profile.flip .chip{background:var(--sky-light);border-color:transparent;}
+.work-photo{grid-column:1 / -1;margin:8px 0 0;}
+.work-photo-frame{
+  width:100%;aspect-ratio:16 / 8;max-width:100%;border-radius:var(--radius);overflow:hidden;
+  background:var(--sky-light);
+}
+.work-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.work-photo-frame.missing{
+  display:grid;place-items:center;border:2px dashed var(--sky);background:var(--bg);
+  aspect-ratio:16 / 6;
+}
+.work-photo-missing{display:flex;flex-direction:column;gap:6px;align-items:center;text-align:center;padding:20px;}
+.work-photo-missing strong{
+  font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);
+}
+.work-photo-missing span{font-size:14.5px;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;}
+.work-photo figcaption{margin-top:12px;font-size:15.5px;color:var(--muted);letter-spacing:.02em;}
 .placeholder{background:rgba(159,187,214,.28);border-radius:3px;padding:0 4px;}
 
 /* ---------- CONTACT ---------- */

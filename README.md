@@ -40,6 +40,12 @@ in `assets/`. Catherine's is a placeholder until hers is added. Replace the
 PDF in `assets/` and keep the same filename, or change `resume` for that person
 in `site-config.js`. Set it to `""` to hide the button.
 
+**Work photos:** each profile ends with a wide photo of that person doing the
+job (not a headshot). Save the image as `assets/steve-at-work.jpg` or
+`assets/catherine-at-work.jpg` (or change `workPhoto.src` in `site-config.js`)
+and edit the caption there. Landscape photos around 1600×800 pixels look best.
+Until the file exists the site shows an empty frame that says what to add.
+
 **Headshots:** drop each photo into `assets/` and set `photo` for that person
 in `site-config.js` (for example `"assets/steve.jpg"`). Square photos around
 400×400 pixels look best. Leave it empty and the site shows initials.
