@@ -114,7 +114,7 @@ window.SITE = {
         { label: "Also", value: "UX/UI design and websites" },
         { label: "Background", value: "[for example: design degree, years of experience]" },
         { label: "Works with", value: "Restaurants, salons, shops, clinics and contractors' offices" },
-        { label: "Based in", value: "[City, State]" }
+        { label: "Based in", value: "Dayton, Ohio" }
       ],
       approach: [
         "A short conversation about your business, in plain language",
