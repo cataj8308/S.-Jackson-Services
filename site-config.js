@@ -111,7 +111,7 @@ window.SITE = {
         { label: "Focus", value: "AI receptionists for local businesses" },
         { label: "Also", value: "UX/UI design and websites" },
         { label: "Experience", value: "UI/UX design intern, Winsupply" },
-        { label: "Education", value: "Centerville High School; Sinclair Community College (dual enrollment)" },
+        { label: "Education", value: "Centerville High School; Sinclair Community College" },
         { label: "Works with", value: "Restaurants, salons, shops, clinics and contractors' offices" },
         { label: "Languages", value: "English and Spanish" },
         { label: "Based in", value: "Dayton, Ohio" }
