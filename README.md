@@ -47,7 +47,7 @@ the picture as `assets/steve-and-catherine.jpg` (or change `teamPhoto.src` in
 **Work photo:** the Trade Services section opens with a photo of Steve at
 work next to the intro (the AI & Design section has no photo). Save the image as `assets/steve-at-work.jpg` (or change `workPhoto.src` in `site-config.js`)
 and edit the caption there. Photos around 1200×900 pixels (4:3) look best.
-Until the file exists the site shows an empty frame that says what to add.
+Until the file exists the site shows a neat branded placeholder in its place.
 
 **Headshots:** drop each photo into `assets/` and set `photo` for that person
 in `site-config.js` (for example `"assets/steve.jpg"`). Square photos around

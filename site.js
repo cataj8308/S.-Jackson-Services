@@ -67,6 +67,7 @@
   }
 
   // Loads a photo into a frame; if the file is missing, shows a note saying what to add.
+  var PLACEHOLDER = "<div class=\"photo-placeholder\"><svg class=\"ph-logo\" viewBox=\"0 0 48 48\" fill=\"none\" aria-hidden=\"true\"><path d=\"M 20.5 8.9 L 20.63 3.78 L 27.37 3.78 L 27.5 8.9 L 32.2 10.85 L 35.92 7.32 L 40.68 12.08 L 37.15 15.8 L 39.1 20.5 L 44.22 20.63 L 44.22 27.37 L 39.1 27.5 L 37.15 32.2 L 40.68 35.92 L 35.92 40.68 L 32.2 37.15 L 27.5 39.1 L 27.37 44.22 L 20.63 44.22 L 20.5 39.1 L 15.8 37.15 L 12.08 40.68 L 7.32 35.92 L 10.85 32.2 L 8.9 27.5 L 3.78 27.37 L 3.78 20.63 L 8.9 20.5 L 10.85 15.8 L 7.32 12.08 L 12.08 7.32 L 15.8 10.85 Z\" stroke=\"#1B3A5C\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M17 24.5 L22 29.5 L31.5 18.5\" stroke=\"#1B3A5C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>S Jackson Services</span></div>";
   function mountPhoto(frame, src, alt, who) {
     if (!frame || !src) return;
     var img = document.createElement('img');
@@ -77,12 +78,9 @@
       frame.appendChild(img);
     });
     img.addEventListener('error', function () {
+      // File not there yet: show a tidy branded placeholder instead of a broken image.
       frame.classList.add('missing');
-      frame.innerHTML = '';
-      var note = el('div', 'work-photo-missing');
-      note.appendChild(el('strong', null, 'Photo of ' + who + ' goes here'));
-      note.appendChild(el('span', null, 'Add the file as ' + src));
-      frame.appendChild(note);
+      frame.innerHTML = PLACEHOLDER;
     });
     img.src = src;
   }
