@@ -104,15 +104,26 @@ window.SITE = {
       },
       story: [
         "Catherine runs the technology side of S Jackson Services. Her focus is the AI receptionist: a phone assistant she sets up and tunes for each business so no customer call goes unanswered, whether the owner is with a client, on a job site, or closed for the night.",
-        "She also designs the screens people actually use. [Your background, for example: a degree in design, years working in UX/UI, or projects you are proud of.] Her design work centers on making things simple enough for anyone, from a first-time smartphone user to a busy contractor's office, to use without a manual.",
-        "Years around job sites and small shops taught her how a business really runs: the phone rings at the worst possible moment, and paperwork piles up. That is the problem she builds for."
+        "She is a UI/UX designer by training and by trade. As a design intern at Winsupply she has designed screens for the company's sales, pricing and project management apps, work used every day by people who are not technical. She holds the Google Professional UX Design Certificate and a Microsoft 365 certification, and studied networking, operating systems and programming, including C++, through two years of dual-enrollment college coursework at Sinclair.",
+        "She is finishing Centerville High School early, graduating magna cum laude with a 4.0 GPA, and is headed for a bachelor's degree in information technology focused on game development and simulation. Along the way she took first place at regionals and a top-five finish at state in a Business Professionals of America competition on AI in business. Six years of Spanish and more than a decade of music round out how she works: she listens first, then builds."
       ],
       facts: [
         { label: "Focus", value: "AI receptionists for local businesses" },
         { label: "Also", value: "UX/UI design and websites" },
-        { label: "Background", value: "[for example: design degree, years of experience]" },
+        { label: "Experience", value: "UI/UX design intern, Winsupply" },
+        { label: "Education", value: "Centerville High School; Sinclair Community College (dual enrollment)" },
         { label: "Works with", value: "Restaurants, salons, shops, clinics and contractors' offices" },
+        { label: "Languages", value: "English and Spanish" },
         { label: "Based in", value: "Dayton, Ohio" }
+      ],
+      credentials: [
+        "Google Professional UX Design Certificate",
+        "Microsoft 365 Certified",
+        "BPA AI business competition: 1st place regional, top 5 state",
+        "National Honor Society",
+        "Spanish Honor Society",
+        "C++",
+        "Networking and operating systems coursework"
       ],
       approach: [
         "A conversation about your business first, so we align on your goals before anything is built",
