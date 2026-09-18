@@ -41,7 +41,6 @@ window.SITE = {
   //   facts    - short label / value pairs shown as a quick-facts list
   //   credentials - certifications and training, shown as a row of tags
   //   approach - "How I work" bullet points
-  //   quote    - one sentence in their own words
   //   resume   - path to a PDF in the assets/ folder, e.g. "assets/steve-jackson-resume.pdf".
   //              Leave it empty ("") to hide the button.
   //   workPhoto - a photo of the person actually doing the work (not a headshot),
@@ -90,8 +89,7 @@ window.SITE = {
         "Starts every shift with a pre-job safety meeting, a safe work permit and a JSA",
         "Inspects to code and to the customer's own procedures, and documents as he goes",
         "Closes out with a complete job book and final package your client can accept"
-      ],
-      quote: "[A sentence in Steve's own words about why he does this work.]"
+      ]
     },
     {
       name: "Catherine Jackson",
@@ -120,8 +118,7 @@ window.SITE = {
         "A conversation about your business first, so we align on your goals before anything is built",
         "A setup you can hear and try before it answers a real customer",
         "Support afterward from the same person who set it up"
-      ],
-      quote: "I want every business to hone in on the quality of their craft without added pressures."
+      ]
     }
   ]
 };

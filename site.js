@@ -143,7 +143,6 @@
       (p.story || []).forEach(function (t) { var para = el('p'); richText(para, t); story.appendChild(para); });
       body.appendChild(story);
 
-      if (p.quote) { var q = el('blockquote', 'profile-quote'); richText(q, p.quote); body.appendChild(q); }
 
       var cols = el('div', 'profile-cols');
       if (p.facts && p.facts.length) {
