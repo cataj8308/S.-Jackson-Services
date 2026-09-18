@@ -104,7 +104,7 @@ window.SITE = {
       },
       story: [
         "Catherine runs the technology side of S Jackson Services. Her focus is the AI receptionist: a phone assistant she sets up and tunes for each business so no customer call goes unanswered, whether the owner is with a client, on a job site, or closed for the night.",
-        "Catherine is a UI/UX designer. As a design intern at Winsupply, she has designed the screens for the company's sales, pricing and project management apps. She holds the Google Professional UX Design Certificate and Microsoft certifications in Word, Excel and PowerPoint, and studied networking, operating systems and programming, including C++, through two years of dual-enrollment college coursework at Sinclair.",
+        "Catherine is a UI/UX designer. As a design intern at Winsupply, she has designed the screens for the company's sales, pricing and project management apps. She holds the Google Professional UX Design Certificate and Microsoft certifications in Word, Excel and PowerPoint. Through two years of college coursework at Sinclair, she built a fundamental knowledge of networking, operating systems and programming, including C++.",
         "She is finishing Centerville High School early, graduating magna cum laude with a 4.0 GPA, and is headed for a bachelor's degree in information technology focused on game development and simulation. Along the way she took first place at regionals and a top-five finish at state in a Business Professionals of America competition on AI. Six years of Spanish and more than a decade of music round out how she works: she listens first, then builds."
       ],
       facts: [
@@ -123,7 +123,7 @@ window.SITE = {
         "National Honor Society",
         "Spanish Honor Society",
         "C++",
-        "Networking and operating systems coursework"
+        "Fundamentals of networking and operating systems"
       ],
       approach: [
         "A conversation about your business first, so we align on your goals before anything is built",
