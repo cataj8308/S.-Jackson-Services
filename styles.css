@@ -187,6 +187,7 @@ a.header-call:hover{background:var(--navy);color:#fff;}
 .side-head .section-head{margin-bottom:0;}
 .side-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:40px;}
 .side-auto{background:#fff;}
+.side-auto .side-head{grid-template-columns:1fr;}
 .side-auto .service{border-top-color:var(--sky);}
 .side-auto .service-icon{background:var(--bg);}
 

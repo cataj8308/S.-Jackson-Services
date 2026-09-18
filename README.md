@@ -44,9 +44,8 @@ in `site-config.js`. Set it to `""` to hide the button.
 the picture as `assets/steve-and-catherine.jpg` (or change `teamPhoto.src` in
 `site-config.js`). Landscape, about 3:2, looks best. There is no caption unless you add one there.
 
-**Work photos:** each service section opens with a photo of that person doing
-the job (not a headshot), next to the section intro. Save the image as `assets/steve-at-work.jpg` or
-`assets/catherine-at-work.jpg` (or change `workPhoto.src` in `site-config.js`)
+**Work photo:** the Trade Services section opens with a photo of Steve at
+work next to the intro (the AI & Design section has no photo). Save the image as `assets/steve-at-work.jpg` (or change `workPhoto.src` in `site-config.js`)
 and edit the caption there. Photos around 1200×900 pixels (4:3) look best.
 Until the file exists the site shows an empty frame that says what to add.
 
