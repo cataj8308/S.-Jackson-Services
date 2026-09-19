@@ -1,0 +1,134 @@
+/* ============================================================
+   S JACKSON SERVICES — SITE SETTINGS
+   ------------------------------------------------------------
+   Edit the values below and every page updates automatically.
+   Anything in [brackets] is a placeholder waiting for real info.
+   ============================================================ */
+window.SITE = {
+  businessName: "S Jackson Services",
+  tagline: "Services · Automation",
+
+  // Where you work. Shown in the hero and the footer.
+  serviceArea: "customers across the United States",
+
+  // Main business phone — used by every "Call" button on the site.
+  mainPhone: "937-608-7698",
+
+  // Business email — used by the Contact section and the form.
+  email: "sjacksonservices1@gmail.com",
+
+  // Web address shown in the footer (no https://).
+  website: "www.sjacksonservices.com",
+
+  // Business hours — plain text, shown in the Contact section.
+  hours: "Open 7 days a week",
+
+  // A photo of the two of you together, shown on the About card.
+  // Drop the image in assets/ and set src to its path. Until the file
+  // exists, the card shows an empty frame that says what to add.
+  // Leave caption as "" for no text under the photo.
+  teamPhoto: {
+    src: "assets/steve-and-catherine.jpg",
+    caption: ""
+  },
+
+  // The two of you. To add a headshot, drop the picture in the
+  // assets/ folder and set photo to its path, e.g. "assets/steve.jpg".
+  // Leave photo empty ("") and the site shows initials instead.
+  //
+  // Each person also has a profile in the About section:
+  //   story    - paragraphs about them (plain text, one per line)
+  //   facts    - short label / value pairs shown as a quick-facts list
+  //   credentials - certifications and training, shown as a row of tags
+  //   approach - "How I work" bullet points
+  //   resume   - path to a PDF in the assets/ folder, e.g. "assets/steve-jackson-resume.pdf".
+  //              Leave it empty ("") to hide the button.
+  //   workPhoto - a photo of the person actually doing the work (not a headshot),
+  //              shown at the top of their service section. Drop the image in
+  //              assets/ and set src to its path. caption is shown under it.
+  //              Until the file exists, an empty frame is shown.
+  people: [
+    {
+      name: "Steve Jackson",
+      role: "Welding · Inspection · Auditing",
+      side: "Trade Services",
+      phone: "937-608-7698",
+      photo: "",
+      resume: "assets/steve-jackson-resume.pdf",
+      workPhoto: {
+        src: "assets/steve-at-work.jpg",
+        caption: "Steve welding a pipeline joint in the field."
+      },
+      story: [
+        "Steve has spent more than 20 years in the pipeline and oil and gas industry, first as a welder and later as a Certified Welding Inspector. He learned the trade in the U.S. Navy, where he trained in general maintenance welding and high-pressure pipe and plate welding, then built a career that runs from the welding truck to the inspector's clipboard.",
+        "He owned and ran S. Jackson Welding LLC for more than a decade, bidding and executing pipe fabrication and repair work at fuel terminals for Sunoco, Marathon and Buckeye, and rehab and testing work for Vectren Gas. As a welder foreman and later site superintendent with United Piping, he ran crews on pipeline projects for Enbridge, TransCanada and Tesoro.",
+        "A Certified Welding Inspector since 2011, he has inspected refinery, pipeline and terminal jobs for BP and MPLX, and most recently served as mechanical lead and owner's representative on large data-center builds for Google and Meta. Contractors call him when they need a qualified welder, an independent inspector, or a job book their client will sign off on."
+      ],
+      facts: [
+        { label: "Trade", value: "Pipe and plate welding, CWI inspection, QA/QC auditing" },
+        { label: "Experience", value: "20+ years in pipeline, oil and gas, and industrial construction" },
+        { label: "CWI since", value: "2011" },
+        { label: "Works with", value: "Contractors only: pipeline, refinery, terminal and data-center projects" },
+        { label: "Based in", value: "Dayton, Ohio area" }
+      ],
+      credentials: [
+        "AWS Certified Welding Inspector (CWI)",
+        "NCCER Trainer",
+        "Veriforce Trainer",
+        "OSHA 10",
+        "OSHA 30",
+        "NFPA 70E Electrical Safety",
+        "Lockout / Tagout",
+        "Fall Protection Competent Person",
+        "CPR and First Aid",
+        "U.S. Navy High Pressure Pipe and Plate Welding School",
+        "U.S. Navy General Maintenance Welder School",
+        "U.S. Navy Hull Technician (A) School"
+      ],
+      approach: [
+        "Starts every shift with a pre-job safety meeting, a safe work permit and a JSA",
+        "Inspects to code and to the customer's own procedures, and documents as he goes",
+        "Closes out with a complete job book and final package your client can accept"
+      ]
+    },
+    {
+      name: "Catherine Jackson",
+      role: "AI Receptionist · UX/UI · Websites",
+      side: "AI & Design",
+      phone: "937-608-3624",
+      photo: "",
+      resume: "",   // set to "assets/catherine-jackson-resume.pdf" once the PDF is uploaded
+      story: [
+        "Catherine runs the technology side of S Jackson Services. Her focus is the AI receptionist: a phone assistant she sets up and tunes for each business so no customer call goes unanswered, whether the owner is with a client, on a job site, or closed for the night.",
+        "Catherine is a UI/UX designer. As a design intern at Winsupply, she works with the company's design team on the screens for its sales, pricing and project management apps, in Figma from wireframes to finished layouts. She has run preference tests and worked from user stories alongside developers. She holds the Google Professional UX Design Certificate and Microsoft certifications in Word, Excel and PowerPoint. Through two years of college coursework at Sinclair, she built a fundamental knowledge of networking, operating systems and programming, including C++.",
+        "She is finishing Centerville High School early as magna cum laude with a 4.0 GPA, and is headed for a bachelor's degree in information technology focused on game development and simulation. Along the way she took first place at regionals and a top-five finish at state in a Business Professionals of America competition on AI. Six years of Spanish and more than a decade of music round out how she works: she listens first, then builds."
+      ],
+      facts: [
+        { label: "Focus", value: "AI receptionists for local businesses" },
+        { label: "Also", value: "UX/UI design and websites" },
+        { label: "Experience", value: "UI/UX design intern, Winsupply" },
+        { label: "Education", value: "Centerville High School; Sinclair Community College" },
+        { label: "Works with", value: "Restaurants, salons, shops, clinics and contractors' offices" },
+        { label: "Languages", value: "English and Spanish" },
+        { label: "Based in", value: "Dayton, Ohio" }
+      ],
+      credentials: [
+        "Google Professional UX Design Certificate",
+        "Microsoft Office Specialist: Word, Excel and PowerPoint",
+        "BPA AI business competition: 1st place regional, top 5 state",
+        "National Honor Society",
+        "Spanish Honor Society",
+        "Figma",
+        "Preference testing",
+        "User stories",
+        "C++",
+        "Fundamentals of networking and operating systems"
+      ],
+      approach: [
+        "A conversation about your business first, so we align on your goals before anything is built",
+        "A setup you can hear and try before it answers a real customer",
+        "Support afterward from the same person who set it up"
+      ]
+    }
+  ]
+};
