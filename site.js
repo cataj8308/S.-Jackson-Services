@@ -123,7 +123,8 @@
       side.appendChild(av);
       if (p.resume) {
         var cv = el('a', 'btn btn-outline');
-        cv.setAttribute('href', p.resume);
+        // The ?v= date makes browsers fetch a freshly uploaded PDF instead of a cached one.
+        cv.setAttribute('href', p.resume + (p.resume.indexOf('?') < 0 ? '?v=' + new Date().toISOString().slice(0, 10) : ''));
         cv.setAttribute('target', '_blank');
         cv.setAttribute('rel', 'noopener');
         cv.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/><path d="M9 12h6M9 16h6"/></svg>';

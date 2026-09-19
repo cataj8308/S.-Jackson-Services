@@ -35,10 +35,26 @@ quick facts, "how I work") also come from `site-config.js`, under
 each person. Anything in `[brackets]` shows highlighted on the page until you
 replace it, so it is easy to spot what is still missing.
 
-**Résumés:** each profile has a "View Résumé" button. Steve's real résumé is
-in `assets/`. Catherine's is a placeholder until hers is added. Replace the
-PDF in `assets/` and keep the same filename, or change `resume` for that person
-in `site-config.js`. Set it to `""` to hide the button.
+**Résumés:** each profile has a "View Résumé" button that opens a PDF from
+`assets/`. To update a résumé, replace the PDF and keep the same filename:
+
+- Steve: `assets/steve-jackson-resume.pdf`
+- Catherine: `assets/catherine-jackson-resume.pdf`
+
+Uploading straight from github.com (no software needed):
+
+1. Open the repository on github.com and pick the branch the site is served
+   from (`main` once the pull request is merged).
+2. Click into the `assets` folder.
+3. Click **Add file → Upload files**, drag the new PDF in, and make sure its
+   name matches the one above exactly (it replaces the old file).
+4. Click **Commit changes**. GitHub Pages rebuilds the site within a minute or
+   two and the button opens the new PDF. If your browser still shows the old
+   one, do a hard refresh (Ctrl+F5 on Windows, Cmd+Shift+R on Mac).
+
+The same steps work for photos in `assets/`: upload the file with the name
+`site-config.js` expects and it appears on the site. Set `resume` to `""` in
+`site-config.js` to hide a button.
 
 **Photo of the two of you:** the About card has a photo frame on top. Save
 the picture as `assets/steve-and-catherine.jpg` (or change `teamPhoto.src` in
