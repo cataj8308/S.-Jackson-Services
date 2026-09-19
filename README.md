@@ -49,7 +49,9 @@ Uploading straight from github.com (no software needed):
 3. Click **Add file → Upload files**, drag the new PDF in, and make sure its
    name matches the one above exactly (it replaces the old file).
 4. Click **Commit changes**. GitHub Pages rebuilds the site within a minute or
-   two and the button opens the new PDF. If your browser still shows the old
+   two and the button opens the new PDF. (Catherine's button is hidden until
+   her PDF exists: after uploading it, set `resume` for Catherine in
+   `site-config.js` to `"assets/catherine-jackson-resume.pdf"`.) If your browser still shows the old
    one, do a hard refresh (Ctrl+F5 on Windows, Cmd+Shift+R on Mac).
 
 The same steps work for photos in `assets/`: upload the file with the name
@@ -91,11 +93,16 @@ change the `<form>` tag in `index.html` to post to their endpoint and remove the
 
 ## Hosting for free on GitHub Pages
 
-1. Push this repo to GitHub.
-2. Repo **Settings → Pages → Source: Deploy from a branch**, pick `main` and `/ (root)`.
-3. Your site will be live at `https://<username>.github.io/<repo>/` in a minute or two.
-4. To use `www.sjacksonservices.com`, add the domain under the same Pages settings
-   and point your domain's DNS at GitHub (they show the exact records to add).
+1. Merge the pull request into `main`.
+2. **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
+   pick `main` and `/ (root)`, click **Save**.
+3. Within a minute or two the site is live at
+   `https://cataj8308.github.io/S.-Jackson-Services/`.
+4. Optional: **Settings → General → Default branch**, set it to `main` so new
+   uploads and edits land on the live branch by default.
+5. To use `www.sjacksonservices.com`, add the domain under the same Pages
+   settings and point your domain's DNS at GitHub (they show the exact records
+   to add). Tick "Enforce HTTPS" once it verifies.
 
 ## Accessibility notes
 

@@ -97,7 +97,7 @@ window.SITE = {
       side: "AI & Design",
       phone: "937-608-3624",
       photo: "",
-      resume: "assets/catherine-jackson-resume.pdf",
+      resume: "",   // set to "assets/catherine-jackson-resume.pdf" once the PDF is uploaded
       story: [
         "Catherine runs the technology side of S Jackson Services. Her focus is the AI receptionist: a phone assistant she sets up and tunes for each business so no customer call goes unanswered, whether the owner is with a client, on a job site, or closed for the night.",
         "Catherine is a UI/UX designer. As a design intern at Winsupply, she works with the company's design team on the screens for its sales, pricing and project management apps, in Figma from wireframes to finished layouts. She has run preference tests and worked from user stories alongside developers. She holds the Google Professional UX Design Certificate and Microsoft certifications in Word, Excel and PowerPoint. Through two years of college coursework at Sinclair, she built a fundamental knowledge of networking, operating systems and programming, including C++.",
