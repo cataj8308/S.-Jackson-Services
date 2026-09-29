@@ -110,8 +110,8 @@ change the `<form>` tag in `index.html` to post to their endpoint and remove the
 
 ## Google
 
-- `google5065e19b0e5e838f.html` is the Search Console verification file. Leave
-  it in place; Google rechecks it.
+- `google5065e19b0e5e838f.html` and `google36cf4928fd1ed4ed.html` are Search
+  Console verification files. Leave them in place; Google rechecks them.
 - `sitemap.xml` lists the page for Google. Submit it once in Search Console
   under **Sitemaps** as `sitemap.xml`.
 - `robots.txt` allows all crawlers and points to the sitemap.
