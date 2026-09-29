@@ -101,10 +101,12 @@ change the `<form>` tag in `index.html` to post to their endpoint and remove the
    `https://cataj8308.github.io/S.-Jackson-Services/`.
 4. Optional: **Settings → General → Default branch**, set it to `main` so new
    uploads and edits land on the live branch by default.
-5. To use `www.sjacksonservices.com`, add the domain under the same Pages
-   settings and point your domain's DNS at GitHub (they show the exact records
-   to add). Tick "Enforce HTTPS" once it verifies. Then update the address in
-   `sitemap.xml` and `robots.txt` to the new domain.
+5. Custom domain: the `CNAME` file holds `www.sjacksonservices.com`. At the
+   registrar, point `www` (CNAME) at `cataj8308.github.io` and the bare domain
+   (A records) at GitHub's four Pages addresses. In **Settings → Pages** enter
+   `www.sjacksonservices.com` as the custom domain and tick "Enforce HTTPS"
+   once the certificate is issued. `sitemap.xml`, `robots.txt` and the
+   canonical links already use the custom domain.
 
 ## Google
 
