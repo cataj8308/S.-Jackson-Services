@@ -80,6 +80,7 @@ in `site-config.js` (for example `"assets/steve.jpg"`). Square photos around
 | `site-config.js` | Your names, phones, email, hours, service area. Edit this one. |
 | `site.js` | Fills in config values, runs the mobile menu and the contact form. |
 | `assets/favicon.svg` | Browser tab icon (the card's logo). |
+| `privacy.html`, `terms.html` | Privacy Policy and Terms, including the SMS program terms Twilio requires. |
 
 ## Contact form
 
