@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cataj8308.github.io/S.-Jackson-Services/sitemap.xml

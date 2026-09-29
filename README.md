@@ -102,7 +102,16 @@ change the `<form>` tag in `index.html` to post to their endpoint and remove the
    uploads and edits land on the live branch by default.
 5. To use `www.sjacksonservices.com`, add the domain under the same Pages
    settings and point your domain's DNS at GitHub (they show the exact records
-   to add). Tick "Enforce HTTPS" once it verifies.
+   to add). Tick "Enforce HTTPS" once it verifies. Then update the address in
+   `sitemap.xml` and `robots.txt` to the new domain.
+
+## Google
+
+- `google5065e19b0e5e838f.html` is the Search Console verification file. Leave
+  it in place; Google rechecks it.
+- `sitemap.xml` lists the page for Google. Submit it once in Search Console
+  under **Sitemaps** as `sitemap.xml`.
+- `robots.txt` allows all crawlers and points to the sitemap.
 
 ## Accessibility notes
 
