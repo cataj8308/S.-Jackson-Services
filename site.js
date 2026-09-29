@@ -223,7 +223,8 @@
         return;
       }
       var subject = 'Website inquiry: ' + service + ' — ' + name;
-      var body = 'Name: ' + name + '\nPhone: ' + phone + '\nService: ' + service + '\n\n' + (msg || '(no additional details)');
+      var consent = form.smsConsent && form.smsConsent.checked ? 'Yes' : 'No';
+      var body = 'Name: ' + name + '\nPhone: ' + phone + '\nService: ' + service + '\nOK to text: ' + consent + '\n\n' + (msg || '(no additional details)');
       window.location.href = 'mailto:' + S.email +
         '?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(body);
