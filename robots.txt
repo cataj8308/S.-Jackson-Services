@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.sjacksonservices.com/sitemap.xml
+Sitemap: https://www.sjacksonservices.com/sitemap-pages.xml
