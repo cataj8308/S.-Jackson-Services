@@ -47,9 +47,17 @@
     if (p.photo) {
       // Background image so the headshot can be zoomed and re-centered inside the circle.
       el.style.backgroundImage = 'url("' + p.photo + '")';
-      el.style.backgroundSize = p.photoZoom || 'cover';
+      el.style.backgroundSize = 'cover';
       el.style.backgroundPosition = p.photoPosition || '50% 50%';
       el.style.backgroundRepeat = 'no-repeat';
+      if (p.photoZoom) {
+        // Zoom from the photo's shorter side so the circle is always fully covered.
+        var probe = new Image();
+        probe.onload = function () {
+          el.style.backgroundSize = probe.naturalWidth >= probe.naturalHeight ? 'auto ' + p.photoZoom : p.photoZoom + ' auto';
+        };
+        probe.src = p.photo;
+      }
       el.setAttribute('role', 'img');
       el.setAttribute('aria-label', p.name || '');
       el.removeAttribute('aria-hidden');
@@ -116,7 +124,8 @@
       cap.appendChild(el('strong', null, p.name || ''));
       cap.appendChild(el('span', null, p.role || ''));
       if (p.workPhoto && p.workPhoto.caption) { var em = el('em'); richText(em, p.workPhoto.caption); cap.appendChild(em); }
-      if (S.photoCredit) cap.appendChild(el('small', 'credit', S.photoCredit));
+      var credit = (p.workPhoto && p.workPhoto.credit !== undefined) ? p.workPhoto.credit : S.photoCredit;
+      if (credit) cap.appendChild(el('small', 'credit', credit));
     }
     if (!(p.workPhoto && p.workPhoto.src) || !frame) return;
     var alt = p.workPhoto.caption ? p.workPhoto.caption.replace(/^\[|\]$/g, '') : (p.name + ' at work');
