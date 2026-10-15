@@ -62,14 +62,17 @@ The same steps work for photos in `assets/`: upload the file with the name
 the picture as `assets/steve-and-catherine.jpg` (or change `teamPhoto.src` in
 `site-config.js`). Landscape, about 3:2, looks best. There is no caption unless you add one there.
 
-**Work photo:** the Trade Services section opens with a photo of Steve at
-work next to the intro (the AI & Design section has no photo). Save the image as `assets/steve-at-work.jpg` (or change `workPhoto.src` in `site-config.js`)
+**Work photos:** each service section opens with a photo of that person at
+work next to the intro: `assets/steve-at-work.jpg` and
+`assets/catherine-at-work.jpg`. The photo credit in the footer is
+`photoCredit` in `site-config.js`. Save the image as `assets/steve-at-work.jpg` (or change `workPhoto.src` in `site-config.js`)
 and edit the caption there. Photos around 1200×900 pixels (4:3) look best.
 Until the file exists the site shows a neat branded placeholder in its place.
 
-**Headshots:** drop each photo into `assets/` and set `photo` for that person
-in `site-config.js` (for example `"assets/steve.jpg"`). Square photos around
-400×400 pixels look best. Leave it empty and the site shows initials.
+**Headshots:** `assets/steve-jackson.jpg` and `assets/catherine-jackson.jpg`,
+set as `photo` for each person in `site-config.js`. `photoPosition` chooses
+which part of the picture stays in the circle. Set `photo` to `""` to show
+initials instead.
 
 ## Files
 
