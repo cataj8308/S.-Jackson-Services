@@ -385,7 +385,8 @@ textarea{min-height:150px;resize:vertical;}
   letter-spacing:.06em;text-transform:uppercase;line-height:1.2;color:var(--navy);
 }
 .legal-date{margin:8px 0 28px;font-size:15px;color:var(--muted);letter-spacing:.04em;}
-.legal h2{font-size:19px;margin:34px 0 10px;}
+.legal h2{font-size:19px;margin:34px 0 10px;scroll-margin-top:100px;}
+.legal h3{font-size:17px;margin:22px 0 8px;color:var(--navy);}
 .legal p{margin:0 0 14px;}
 .legal ul{margin:0 0 16px 22px;}
 .legal li{margin-bottom:8px;}
