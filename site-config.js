@@ -21,7 +21,7 @@ window.SITE = {
   website: "www.sjacksonservices.com",
 
   // Photo credit shown under each photo and in the footer. Leave "" for none.
-  photoCredit: "Photos by Ta Belle Vie Photography",
+  photoCredit: "Photos by Ta Belle Vie",
 
   // Business hours — plain text, shown in the Contact section.
   hours: "Open 7 days a week",
@@ -109,7 +109,7 @@ window.SITE = {
       side: "AI & Design",
       phone: "937-608-3624",
       photo: "assets/catherine-jackson.jpg",
-      photoPosition: "42% 30%",
+      photoPosition: "30% 30%",
       photoZoom: "135%",
       resume: "",   // set to "assets/catherine-jackson-resume.pdf" once the PDF is uploaded
       workPhoto: {
