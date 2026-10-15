@@ -43,7 +43,9 @@ window.SITE = {
   // photoPosition / position: which part of a photo stays visible when it is
   // cropped to fit its frame, as "x% y%" (50% 50% is the middle).
   // photoZoom: how much to enlarge a headshot inside its circle, e.g. "135%".
-  // Leave it out for a plain fit.
+  // Leave it out for a plain fit. The zoom is measured on the photo's shorter
+  // side, so the circle is always filled.
+  // workPhoto.credit: override the credit line under that one photo; "" hides it.
   //
   // Each person also has a profile in the About section:
   //   story    - paragraphs about them (plain text, one per line)
@@ -64,12 +66,13 @@ window.SITE = {
       phone: "937-608-7698",
       photo: "assets/steve-jackson.jpg",
       photoPosition: "56% 35%",
-      photoZoom: "115%",
+      photoZoom: "120%",
       resume: "assets/steve-jackson-resume.pdf",
       workPhoto: {
         src: "assets/steve-at-work.jpg",
         caption: "",
-        position: "50% 50%"
+        position: "50% 50%",
+        credit: ""          // not a Ta Belle Vie photo, so no credit line under it
       },
       story: [
         "Steve has spent more than 20 years in the pipeline and oil and gas industry, first as a welder and later as a Certified Welding Inspector. He learned the trade in the U.S. Navy, where he trained in general maintenance welding and high-pressure pipe and plate welding, then built a career that runs from the welding truck to the inspector's clipboard.",
