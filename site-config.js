@@ -20,7 +20,7 @@ window.SITE = {
   // Web address shown in the footer (no https://).
   website: "www.sjacksonservices.com",
 
-  // Photo credit shown in the footer. Leave "" for none.
+  // Photo credit shown under each photo and in the footer. Leave "" for none.
   photoCredit: "Photos by Ta Belle Vie Photography",
 
   // Business hours — plain text, shown in the Contact section.
@@ -42,6 +42,8 @@ window.SITE = {
   //
   // photoPosition / position: which part of a photo stays visible when it is
   // cropped to fit its frame, as "x% y%" (50% 50% is the middle).
+  // photoZoom: how much to enlarge a headshot inside its circle, e.g. "135%".
+  // Leave it out for a plain fit.
   //
   // Each person also has a profile in the About section:
   //   story    - paragraphs about them (plain text, one per line)
@@ -61,11 +63,12 @@ window.SITE = {
       side: "Trade Services",
       phone: "937-608-7698",
       photo: "assets/steve-jackson.jpg",
-      photoPosition: "55% 30%",
+      photoPosition: "56% 35%",
+      photoZoom: "115%",
       resume: "assets/steve-jackson-resume.pdf",
       workPhoto: {
         src: "assets/steve-at-work.jpg",
-        caption: "Steve welding a pipeline joint in the field.",
+        caption: "",
         position: "50% 50%"
       },
       story: [
@@ -106,11 +109,12 @@ window.SITE = {
       side: "AI & Design",
       phone: "937-608-3624",
       photo: "assets/catherine-jackson.jpg",
-      photoPosition: "50% 25%",
+      photoPosition: "42% 30%",
+      photoZoom: "135%",
       resume: "",   // set to "assets/catherine-jackson-resume.pdf" once the PDF is uploaded
       workPhoto: {
         src: "assets/catherine-at-work.jpg",
-        caption: "Catherine at her desk, working on a design.",
+        caption: "",
         position: "80% 50%"
       },
       story: [

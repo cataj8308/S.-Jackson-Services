@@ -45,9 +45,14 @@
   function avatarFill(el, p) {
     el.innerHTML = '';
     if (p.photo) {
-      var img = document.createElement('img'); img.src = p.photo; img.alt = p.name || '';
-      if (p.photoPosition) img.style.objectPosition = p.photoPosition;
-      el.appendChild(img);
+      // Background image so the headshot can be zoomed and re-centered inside the circle.
+      el.style.backgroundImage = 'url("' + p.photo + '")';
+      el.style.backgroundSize = p.photoZoom || 'cover';
+      el.style.backgroundPosition = p.photoPosition || '50% 50%';
+      el.style.backgroundRepeat = 'no-repeat';
+      el.setAttribute('role', 'img');
+      el.setAttribute('aria-label', p.name || '');
+      el.removeAttribute('aria-hidden');
     } else {
       el.textContent = String(p.name || '').split(/\s+/).map(function (w) { return w[0] || ''; }).join('').slice(0, 2).toUpperCase();
     }
@@ -92,7 +97,12 @@
   if (teamFig && S.teamPhoto && S.teamPhoto.src) {
     var names = (S.people || []).map(function (p) { return String(p.name || '').split(/\s+/)[0]; }).filter(Boolean).join(' and ');
     mountPhoto(teamFig.querySelector('.team-photo-frame'), S.teamPhoto.src, S.teamPhoto.caption || names, names || 'the team', S.teamPhoto.position);
-    if (S.teamPhoto.caption) { var tc = el('figcaption'); richText(tc, S.teamPhoto.caption); teamFig.appendChild(tc); }
+    if (S.teamPhoto.caption || S.photoCredit) {
+      var tc = el('figcaption');
+      if (S.teamPhoto.caption) { var tcap = el('span'); richText(tcap, S.teamPhoto.caption); tc.appendChild(tcap); }
+      if (S.photoCredit) tc.appendChild(el('small', 'credit', S.photoCredit));
+      teamFig.appendChild(tc);
+    }
   }
 
   // In-action photos in the two service sections
@@ -106,6 +116,7 @@
       cap.appendChild(el('strong', null, p.name || ''));
       cap.appendChild(el('span', null, p.role || ''));
       if (p.workPhoto && p.workPhoto.caption) { var em = el('em'); richText(em, p.workPhoto.caption); cap.appendChild(em); }
+      if (S.photoCredit) cap.appendChild(el('small', 'credit', S.photoCredit));
     }
     if (!(p.workPhoto && p.workPhoto.src) || !frame) return;
     var alt = p.workPhoto.caption ? p.workPhoto.caption.replace(/^\[|\]$/g, '') : (p.name + ' at work');
