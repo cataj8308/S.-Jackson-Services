@@ -45,8 +45,14 @@
   function avatarFill(el, p) {
     el.innerHTML = '';
     if (p.photo) {
-      var img = document.createElement('img'); img.src = p.photo; img.alt = p.name || '';
-      el.appendChild(img);
+      // Background image so the headshot can be zoomed and re-centered inside the circle.
+      el.style.backgroundImage = 'url("' + p.photo + '")';
+      el.style.backgroundSize = p.photoZoom || 'cover';
+      el.style.backgroundPosition = p.photoPosition || '50% 50%';
+      el.style.backgroundRepeat = 'no-repeat';
+      el.setAttribute('role', 'img');
+      el.setAttribute('aria-label', p.name || '');
+      el.removeAttribute('aria-hidden');
     } else {
       el.textContent = String(p.name || '').split(/\s+/).map(function (w) { return w[0] || ''; }).join('').slice(0, 2).toUpperCase();
     }
@@ -68,10 +74,11 @@
 
   // Loads a photo into a frame; if the file is missing, shows a note saying what to add.
   var PLACEHOLDER = "<div class=\"photo-placeholder\"><svg class=\"ph-logo\" viewBox=\"0 0 48 48\" fill=\"none\" aria-hidden=\"true\"><path d=\"M 20.5 8.9 L 20.63 3.78 L 27.37 3.78 L 27.5 8.9 L 32.2 10.85 L 35.92 7.32 L 40.68 12.08 L 37.15 15.8 L 39.1 20.5 L 44.22 20.63 L 44.22 27.37 L 39.1 27.5 L 37.15 32.2 L 40.68 35.92 L 35.92 40.68 L 32.2 37.15 L 27.5 39.1 L 27.37 44.22 L 20.63 44.22 L 20.5 39.1 L 15.8 37.15 L 12.08 40.68 L 7.32 35.92 L 10.85 32.2 L 8.9 27.5 L 3.78 27.37 L 3.78 20.63 L 8.9 20.5 L 10.85 15.8 L 7.32 12.08 L 12.08 7.32 L 15.8 10.85 Z\" stroke=\"#1B3A5C\" stroke-width=\"2.4\" stroke-linejoin=\"round\"/><path d=\"M17 24.5 L22 29.5 L31.5 18.5\" stroke=\"#1B3A5C\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg><span>S Jackson Services</span></div>";
-  function mountPhoto(frame, src, alt, who) {
+  function mountPhoto(frame, src, alt, who, position) {
     if (!frame || !src) return;
     var img = document.createElement('img');
     img.alt = alt || '';
+    if (position) img.style.objectPosition = position;
     img.addEventListener('load', function () {
       frame.classList.remove('missing');
       frame.innerHTML = '';
@@ -89,8 +96,13 @@
   var teamFig = document.getElementById('teamPhoto');
   if (teamFig && S.teamPhoto && S.teamPhoto.src) {
     var names = (S.people || []).map(function (p) { return String(p.name || '').split(/\s+/)[0]; }).filter(Boolean).join(' and ');
-    mountPhoto(teamFig.querySelector('.team-photo-frame'), S.teamPhoto.src, S.teamPhoto.caption || names, names || 'the team');
-    if (S.teamPhoto.caption) { var tc = el('figcaption'); richText(tc, S.teamPhoto.caption); teamFig.appendChild(tc); }
+    mountPhoto(teamFig.querySelector('.team-photo-frame'), S.teamPhoto.src, S.teamPhoto.caption || names, names || 'the team', S.teamPhoto.position);
+    if (S.teamPhoto.caption || S.photoCredit) {
+      var tc = el('figcaption');
+      if (S.teamPhoto.caption) { var tcap = el('span'); richText(tcap, S.teamPhoto.caption); tc.appendChild(tcap); }
+      if (S.photoCredit) tc.appendChild(el('small', 'credit', S.photoCredit));
+      teamFig.appendChild(tc);
+    }
   }
 
   // In-action photos in the two service sections
@@ -104,10 +116,11 @@
       cap.appendChild(el('strong', null, p.name || ''));
       cap.appendChild(el('span', null, p.role || ''));
       if (p.workPhoto && p.workPhoto.caption) { var em = el('em'); richText(em, p.workPhoto.caption); cap.appendChild(em); }
+      if (S.photoCredit) cap.appendChild(el('small', 'credit', S.photoCredit));
     }
     if (!(p.workPhoto && p.workPhoto.src) || !frame) return;
     var alt = p.workPhoto.caption ? p.workPhoto.caption.replace(/^\[|\]$/g, '') : (p.name + ' at work');
-    mountPhoto(frame, p.workPhoto.src, alt, String(p.name || '').split(/\s+/)[0] + ' at work');
+    mountPhoto(frame, p.workPhoto.src, alt, String(p.name || '').split(/\s+/)[0] + ' at work', p.workPhoto.position);
   });
 
   // Profiles (About section) — one block per person, alternating sides.

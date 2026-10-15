@@ -20,6 +20,9 @@ window.SITE = {
   // Web address shown in the footer (no https://).
   website: "www.sjacksonservices.com",
 
+  // Photo credit shown under each photo and in the footer. Leave "" for none.
+  photoCredit: "Photos by Ta Belle Vie",
+
   // Business hours — plain text, shown in the Contact section.
   hours: "Open 7 days a week",
 
@@ -29,12 +32,18 @@ window.SITE = {
   // Leave caption as "" for no text under the photo.
   teamPhoto: {
     src: "assets/steve-and-catherine.jpg",
-    caption: ""
+    caption: "",
+    position: "50% 35%"   // which part of the photo to keep when it is cropped to fit
   },
 
   // The two of you. To add a headshot, drop the picture in the
   // assets/ folder and set photo to its path, e.g. "assets/steve.jpg".
   // Leave photo empty ("") and the site shows initials instead.
+  //
+  // photoPosition / position: which part of a photo stays visible when it is
+  // cropped to fit its frame, as "x% y%" (50% 50% is the middle).
+  // photoZoom: how much to enlarge a headshot inside its circle, e.g. "135%".
+  // Leave it out for a plain fit.
   //
   // Each person also has a profile in the About section:
   //   story    - paragraphs about them (plain text, one per line)
@@ -53,11 +62,14 @@ window.SITE = {
       role: "Welding · Inspection · Auditing",
       side: "Trade Services",
       phone: "937-608-7698",
-      photo: "",
+      photo: "assets/steve-jackson.jpg",
+      photoPosition: "56% 35%",
+      photoZoom: "115%",
       resume: "assets/steve-jackson-resume.pdf",
       workPhoto: {
         src: "assets/steve-at-work.jpg",
-        caption: "Steve welding a pipeline joint in the field."
+        caption: "",
+        position: "50% 50%"
       },
       story: [
         "Steve has spent more than 20 years in the pipeline and oil and gas industry, first as a welder and later as a Certified Welding Inspector. He learned the trade in the U.S. Navy, where he trained in general maintenance welding and high-pressure pipe and plate welding, then built a career that runs from the welding truck to the inspector's clipboard.",
@@ -96,8 +108,15 @@ window.SITE = {
       role: "AI Receptionist · UX/UI · Websites",
       side: "AI & Design",
       phone: "937-608-3624",
-      photo: "",
+      photo: "assets/catherine-jackson.jpg",
+      photoPosition: "30% 30%",
+      photoZoom: "135%",
       resume: "",   // set to "assets/catherine-jackson-resume.pdf" once the PDF is uploaded
+      workPhoto: {
+        src: "assets/catherine-at-work.jpg",
+        caption: "",
+        position: "80% 50%"
+      },
       story: [
         "Catherine runs the technology side of S Jackson Services. Her focus is the AI receptionist: a phone assistant she sets up and tunes for each business so no customer call goes unanswered, whether the owner is with a client, on a job site, or closed for the night.",
         "Catherine is a UI/UX designer. As a design intern at Winsupply, she works with the company's design team on the screens for its sales, pricing and project management apps, in Figma from wireframes to finished layouts. She has run preference tests and worked from user stories alongside developers. She holds the Google Professional UX Design Certificate and Microsoft certifications in Word, Excel and PowerPoint. Through two years of college coursework at Sinclair, she built a fundamental knowledge of networking, operating systems and programming, including C++.",
